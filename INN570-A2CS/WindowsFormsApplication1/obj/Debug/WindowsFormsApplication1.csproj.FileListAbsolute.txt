@@ -1,0 +1,15 @@
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.TMEditor.resources
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\test.resx
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\test.Designer.cs
+C:\Users\newage3680\Desktop\test\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.test.resources
+C:\Documents\INN570\WindowsFormsApplication1\INN570-A2CS\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Documents\INN570\WindowsFormsApplication1\INN570-A2CS\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Documents\INN570\WindowsFormsApplication1\INN570-A2CS\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
