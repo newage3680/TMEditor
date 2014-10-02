@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -41,3 +42,18 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/TempPE/test.Designer.cs.dll
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.pdb
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.csproj.GenerateResource.Cache
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/TempPE/test.Designer.cs.dll
+*.dll
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.pdb
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.exe
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.csproj.GenerateResource.Cache
+*.exe
+INN570-A2CS/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.pdb
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.csproj.GenerateResource.Cache
+INN570-A2CS/WindowsFormsApplication1/obj/Debug/TempPE/test.Designer.cs.dll
+INN570-A2CS/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.pdb

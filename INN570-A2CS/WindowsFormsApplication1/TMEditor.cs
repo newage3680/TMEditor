@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
         const int NumColumns = 2;
         const string Separator = ";";
 
-        private DataTable resxTable;
+        //private DataTable resxTable;
         public TMEditor()
         {
             InitializeComponent();
@@ -37,10 +37,10 @@ namespace WindowsFormsApplication1
         {
             //Initialize everything on startup
             //Create a data table with two columns
-            this.resxTable = new DataTable(TableName);
-            this.resxTable.Columns.Add(new DataColumn(col1Name, Type.GetType("System.String")));
-            this.resxTable.Columns.Add(new DataColumn(col2Name, Type.GetType("System.DateTime")));
-            dataGrid.DataSource = resxTable;
+            //this.resxTable = new DataTable(TableName);
+            //this.resxTable.Columns.Add(new DataColumn(col1Name, Type.GetType("System.String")));
+            //this.resxTable.Columns.Add(new DataColumn(col2Name, Type.GetType("System.DateTime")));
+            //dataGrid.DataSource = resxTable;
 
             //Set up a better looking table 
             dataGrid.Columns[col1Name].Width = (dataGrid.Width - dataGrid.RowHeadersWidth - 2 * GridLineWidth) / NumColumns
@@ -60,8 +60,8 @@ namespace WindowsFormsApplication1
                 string target = openFileDialog1.FileName;
                 StreamReader MyStream = new StreamReader(openFileDialog1.FileName);
                 dataGrid.DataSource = null;
-                resxTable.Clear(); //Clear the existing table
-                dataGrid.DataSource = resxTable;
+                //resxTable.Clear(); //Clear the existing table
+                //dataGrid.DataSource = resxTable;
 
                 Dictionary<string, string> resourceMap = new Dictionary<string, string>();
                 ResXResourceReader resourceReader = new ResXResourceReader(target);
