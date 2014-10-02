@@ -23,6 +23,13 @@ namespace WindowsFormsApplication1
         const string Separator = ";";
 
         //private DataTable resxTable;
+        class Entry
+        {
+            public string Key { get; set; }
+            public string Value { get; set; }
+        }
+        BindingList<Entry> resxEntries = new BindingList<Entry>();
+
         public TMEditor()
         {
             InitializeComponent();
@@ -69,8 +76,10 @@ namespace WindowsFormsApplication1
                 foreach (DictionaryEntry d in resourceReader)
                 {
                     resourceMap.Add(d.Key.ToString(), d.Value.ToString());
+                    resxEntries.Add(new Entry() { Key = d.Key.ToString(), Value = d.Value.ToString() });
                 }
-                dataGrid.DataSource = resourceMap.ToArray();
+                //dataGrid.DataSource = resourceMap.ToArray();
+                dataGrid.DataSource = resxEntries;
                 dataGrid.Update();
                 dataGrid.Refresh();
                 
