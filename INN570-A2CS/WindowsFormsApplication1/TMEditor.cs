@@ -42,13 +42,6 @@ namespace WindowsFormsApplication1
 
         private void TMEditor_Load(object sender, EventArgs e)
         {
-            //Initialize everything on startup
-            //Create a data table with two columns
-            //this.resxTable = new DataTable(TableName);
-            //this.resxTable.Columns.Add(new DataColumn(col1Name, Type.GetType("System.String")));
-            //this.resxTable.Columns.Add(new DataColumn(col2Name, Type.GetType("System.DateTime")));
-            //dataGrid.DataSource = resxTable;
-
             //Set up a better looking table 
             dataGrid.Columns[col1Name].Width = (dataGrid.Width - dataGrid.RowHeadersWidth - 2 * GridLineWidth) / NumColumns
                   - GridLineWidth;
@@ -67,70 +60,27 @@ namespace WindowsFormsApplication1
             {
                 string target = openFileDialog1.FileName;
                 StreamReader MyStream = new StreamReader(openFileDialog1.FileName);
+                //Clear the DataGridView
                 dataGrid.DataSource = null;
+                dataGrid.RowCount = 0;
+                dataGrid.ColumnCount = 0;
                 dataGrid.AutoGenerateColumns = true;
-                //resxTable.Clear(); //Clear the existing table
-                //dataGrid.DataSource = resxTable;
 
                 Dictionary<string, string> resourceMap = new Dictionary<string, string>();
                 ResXResourceReader resourceReader = new ResXResourceReader(target);
-                //IDictionaryEnumerator dict = resourceReader.GetEnumerator();
                 foreach (DictionaryEntry d in resourceReader)
                 {
-                    //resourceMap.Add(d.Key.ToString(), d.Value.ToString());
                     resxEntries.Add(new Entry() { Key = d.Key.ToString(), Value = d.Value.ToString() });
                 }
                 MyStream.Close();
-
-
-                    //dataGrid.DataSource = resourceMap.ToArray();
                     dataGrid.DataSource = resxEntries;
+                    //Adds third colum for user to select translations
                     var col3 = new DataGridViewTextBoxColumn();
-                    dataGrid.Columns.Add(new DataGridViewTextBoxColumn());//Adds third colum for user to select translations
-                    
+                    dataGrid.Columns.Add(new DataGridViewTextBoxColumn());
+                    dataGrid.Columns[2].Name = "Target";
                     dataGrid.Update();
                     dataGrid.Refresh();
-
-
-
-                    //Dictionary<string, string> resourceMap = new Dictionary<string, string>();
-                    //string filename = "Your resource filepath";
-                    //ResXResourceReader rsxr = new ResXResourceReader(filename);
-                    //foreach (DictionaryEntry d in rsxr)
-                    //{
-                    //    resourceMap.Add(d.Key.ToString(), d.Value.ToString());
-                    //}
-                    //dataGridView1.DataSource = resourceMap.ToArray();
-
-                    ///try
-                    //{
-                    //    while (true)
-                    //    {
-                    //        String MyLine = MyStream.ReadLine();
-                    //        if (MyLine == null)
-                    //        {
-                    //            break;
-                    //        }
-                    //        else if (MyLine.Length != 0)
-                    //        {
-                    //            String[] fields = MyLine.Split(Separator.ToCharArray());
-                    //            if (fields.GetLength(0) == 2)
-                    //            {
-                    //                resxTable.Rows.Add(resxTable.NewRow());
-                    //                resxTable.Rows[resxTable.Rows.Count - 1][col1Name] =
-                    //                 fields[0].Trim();
-                    //                resxTable.Rows[resxTable.Rows.Count - 1][col2Name] =
-                    //                fields[1].Trim();
-                    //            }
-                    //        }
-                    //    }
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show("Fatal Error" + ex.ToString());
-                    //    Application.Exit();
-                    //}
-                
+                    
             }
 
 
@@ -138,7 +88,6 @@ namespace WindowsFormsApplication1
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             saveFileDialog1.Reset();
             saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
             saveFileDialog1.RestoreDirectory = false;
@@ -146,26 +95,15 @@ namespace WindowsFormsApplication1
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ResXResourceWriter writer = new ResXResourceWriter(saveFileDialog1.FileName);
-                //BindingList<Entry> resxEntries = new BindingList<Entry>();
 
-                dataGrid.EndEdit();
-                    //for (int i = 0; i<dataGrid.RowCount;i++ )
+                dataGrid.EndEdit(); //Finalises latest entry
                         foreach (DataGridViewRow row in dataGrid.Rows)
                     {
                             if((row.Cells[0].Value.ToString() != null || row.Cells[2].Value.ToString() != null))
                             {
                                 writer.AddResource(new ResXDataNode(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString()));
                             }
-                            //else error
-                        //IEnumerator cellReader = row.Cells.GetEnumerator();
-                        //cellReader.MoveNext();
-                        //string key = cellReader.Current.ToString();
-                        //cellReader.MoveNext();
-                        //cellReader.MoveNext();
-                        //string resxValue = cellReader.Current.;
-                        //writer.AddResource(new ResXDataNode(dataGrid[0,i].Value.ToString(), dataGrid[2,i].Value.ToString()));//[0].Value.ToString(), row.Cells[2].Value));//row.Cells.GetEnumerator, row.Cells[2]));
-                        //resxEntries.Add(new Entry() { Key = row.Cells[0].ToString(), Value = row.Cells[2].ToString() });
-                    }
+                      }
                 writer.Generate();
                 writer.Close();
             }
