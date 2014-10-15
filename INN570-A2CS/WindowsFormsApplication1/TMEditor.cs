@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Resources;
 using System.Collections;
+using System.Globalization;
 
 namespace WindowsFormsApplication1
 {
@@ -46,6 +47,25 @@ namespace WindowsFormsApplication1
             //dataGrid.Columns[col1Name].Width = (dataGrid.Width - dataGrid.RowHeadersWidth - 2 * GridLineWidth) / NumColumns
             //      - GridLineWidth;
             //dataGrid.Columns[col2Name].Width = dataGrid.Columns[col1Name].Width;
+            CultureInfo[] list;
+            String name;
+            //Get a list of cultures - either all or installed
+            list = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            
+                //list = CultureInfo.GetCultures(CultureTypes.InstalledWin32Cultures);
+
+            //Fill the combo boxes
+            cboCulture.Items.Clear();
+
+            //There is a name and a display name
+            foreach (CultureInfo ci in list)
+            {
+                //bind the names together and show for culture
+                name = ci.Name + " " + ci.DisplayName;
+                cboCulture.Items.Add(name);
+            }
+
+            cboCulture.SelectedIndex = 0;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,11 +113,11 @@ namespace WindowsFormsApplication1
             saveFileDialog1.Reset();
             saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
             saveFileDialog1.RestoreDirectory = false;
-            saveFileDialog1.Filter = "Resource files (*.resx)|*.resx";
+            var savetype = cboCulture.Text.Split(' ');
+            saveFileDialog1.Filter = string.Format("Resource files (*.{0}.resx)|*.{0}.resx", savetype[0]);
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ResXResourceWriter writer = new ResXResourceWriter(saveFileDialog1.FileName);
-
                 dataGrid.EndEdit(); //Finalises latest entry
                         foreach (DataGridViewRow row in dataGrid.Rows)
                     {

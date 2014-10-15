@@ -39,6 +39,8 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.lblResxCulture = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cboCulture = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.layoutTable.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -65,6 +67,8 @@
             this.layoutTable.Controls.Add(this.dataGrid, 0, 1);
             this.layoutTable.Controls.Add(this.lblResxCulture, 2, 0);
             this.layoutTable.Controls.Add(this.label2, 1, 0);
+            this.layoutTable.Controls.Add(this.cboCulture, 2, 1);
+            this.layoutTable.Controls.Add(this.label1, 1, 1);
             this.layoutTable.Location = new System.Drawing.Point(9, 40);
             this.layoutTable.Margin = new System.Windows.Forms.Padding(2);
             this.layoutTable.Name = "layoutTable";
@@ -143,6 +147,23 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Resx file culture:";
             // 
+            // cboCulture
+            // 
+            this.cboCulture.FormattingEnabled = true;
+            this.cboCulture.Location = new System.Drawing.Point(407, 37);
+            this.cboCulture.Name = "cboCulture";
+            this.cboCulture.Size = new System.Drawing.Size(92, 21);
+            this.cboCulture.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(314, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Target culture:";
+            // 
             // TMEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +199,8 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label lblResxCulture;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboCulture;
+        private System.Windows.Forms.Label label1;
     }
 }
 
