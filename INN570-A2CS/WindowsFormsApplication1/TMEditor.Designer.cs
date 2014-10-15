@@ -37,6 +37,8 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.lblResxCulture = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.layoutTable.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -50,16 +52,19 @@
             this.dataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowTemplate.Height = 24;
-            this.dataGrid.Size = new System.Drawing.Size(374, 122);
+            this.dataGrid.Size = new System.Drawing.Size(307, 122);
             this.dataGrid.TabIndex = 0;
             // 
             // layoutTable
             // 
-            this.layoutTable.ColumnCount = 2;
-            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.06374F));
-            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.93626F));
+            this.layoutTable.ColumnCount = 3;
+            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.9802F));
+            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.0198F));
+            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.layoutTable.Controls.Add(this.btnExit, 1, 2);
             this.layoutTable.Controls.Add(this.dataGrid, 0, 1);
+            this.layoutTable.Controls.Add(this.lblResxCulture, 2, 0);
+            this.layoutTable.Controls.Add(this.label2, 1, 0);
             this.layoutTable.Location = new System.Drawing.Point(9, 40);
             this.layoutTable.Margin = new System.Windows.Forms.Padding(2);
             this.layoutTable.Name = "layoutTable";
@@ -73,7 +78,7 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(444, 306);
+            this.btnExit.Location = new System.Drawing.Point(346, 306);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(56, 19);
@@ -120,6 +125,24 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lblResxCulture
+            // 
+            this.lblResxCulture.AutoSize = true;
+            this.lblResxCulture.Location = new System.Drawing.Point(407, 0);
+            this.lblResxCulture.Name = "lblResxCulture";
+            this.lblResxCulture.Size = new System.Drawing.Size(13, 13);
+            this.lblResxCulture.TabIndex = 2;
+            this.lblResxCulture.Text = "  ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(314, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Resx file culture:";
+            // 
             // TMEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +157,7 @@
             this.Load += new System.EventHandler(this.TMEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.layoutTable.ResumeLayout(false);
+            this.layoutTable.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -152,6 +176,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label lblResxCulture;
+        private System.Windows.Forms.Label label2;
     }
 }
 

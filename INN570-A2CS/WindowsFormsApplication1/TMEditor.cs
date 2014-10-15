@@ -43,9 +43,9 @@ namespace WindowsFormsApplication1
         private void TMEditor_Load(object sender, EventArgs e)
         {
             //Set up a better looking table 
-            dataGrid.Columns[col1Name].Width = (dataGrid.Width - dataGrid.RowHeadersWidth - 2 * GridLineWidth) / NumColumns
-                  - GridLineWidth;
-            dataGrid.Columns[col2Name].Width = dataGrid.Columns[col1Name].Width;
+            //dataGrid.Columns[col1Name].Width = (dataGrid.Width - dataGrid.RowHeadersWidth - 2 * GridLineWidth) / NumColumns
+            //      - GridLineWidth;
+            //dataGrid.Columns[col2Name].Width = dataGrid.Columns[col1Name].Width;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,8 +59,11 @@ namespace WindowsFormsApplication1
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string target = openFileDialog1.FileName;
-                StreamReader MyStream = new StreamReader(openFileDialog1.FileName);
-                //Clear the DataGridView
+                string[] resxCulture = target.Split('.');
+                if(resxCulture.Length == 3){
+                    lblResxCulture.Text = resxCulture[1];
+                }
+                else lblResxCulture.Text = "Undefined";//filters based on filename
                 dataGrid.DataSource = null;
                 dataGrid.RowCount = 0;
                 dataGrid.ColumnCount = 0;
@@ -72,9 +75,8 @@ namespace WindowsFormsApplication1
                 {
                     resxEntries.Add(new Entry() { Key = d.Key.ToString(), Value = d.Value.ToString() });
                 }
-                MyStream.Close();
                     dataGrid.DataSource = resxEntries;
-                    //Adds third colum for user to select translations
+                    //Add third colum for user to select translations
                     var col3 = new DataGridViewTextBoxColumn();
                     dataGrid.Columns.Add(new DataGridViewTextBoxColumn());
                     dataGrid.Columns[2].Name = "Target";
@@ -103,6 +105,7 @@ namespace WindowsFormsApplication1
                             {
                                 writer.AddResource(new ResXDataNode(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString()));
                             }
+                            //TODO else error
                       }
                 writer.Generate();
                 writer.Close();
